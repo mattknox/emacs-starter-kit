@@ -193,7 +193,7 @@
 ;;
 ;; This release was superficially tested with Emacs 21.2 and XEmacs 21.4.
 
-
+
 
 ;;; Code:
 
@@ -572,7 +572,7 @@ libraries are mainly useful for color theme authors."
 	  (library (nth 3 theme))
 	  (desc))
       (when (or (not library) arg)
-	(setq desc (format "%-23s %s" 
+	(setq desc (format "%-23s %s"
 			   (if library (concat name " [lib]") name)
 			   author))
 	(put-text-property 0 (length desc) 'color-theme func desc)
@@ -686,7 +686,7 @@ Binds `color-theme-is-global' to nil and calls
   (let ((color-theme-is-global nil))
     (color-theme-install-at-point)))
 
-
+
 
 ;; Taking a snapshot of the current color theme and pretty printing it.
 
@@ -864,15 +864,15 @@ OLD is the current setting, NEW is the setting inherited from."
 		more-atts (cddr more-atts))
 	  ;; Color-theme assumes that no value is ever 'unspecified.
 	  (cond ((eq att ':height); cumulative effect!
-		 (setq atts (plist-put atts 
-				       ':height 
+		 (setq atts (plist-put atts
+				       ':height
 				       (color-theme-spec-resolve-height
-					(plist-get atts att) 
+					(plist-get atts att)
 					val))))
 		;; Default: Only put if it has not been specified before.
 		((not (plist-get atts att))
 		 (setq atts (cons att (cons val atts))))
-		  
+
 ))))
     atts))
 ;; (color-theme-spec-resolve-inheritance '(:bold t))
@@ -1317,7 +1317,7 @@ The snapshot is created via `color-theme-snapshot'."
 	      ;; remaining elements of snapshot: face specs
 	      ,@(color-theme-get-face-definitions))))))
 
-
+
 
 ;;; Handling the various parts of a color theme install
 
@@ -1488,7 +1488,7 @@ Called from `color-theme-install'."
 ;; of a color-theme in .emacs.  That's why we use the
 ;; `face-defface-spec' property.
 
-
+
 
 ;;; Theme accessor functions, canonicalization, merging, comparing
 
@@ -1593,7 +1593,7 @@ a difference."
 	  vars
 	  faces)))
 
-
+
 
 ;;; Installing a color theme
 
@@ -1638,7 +1638,7 @@ frame-parameter settings of previous color themes."
     (color-theme-add-to-history
      (car theme))))
 
-
+
 
 ;; Sharing your stuff
 
@@ -1695,7 +1695,7 @@ frame-parameter settings of previous color themes."
       (message "Enter a message and type %s to send or %s to abort."
 	       sendkey abortkey))))
 
-
+
 
 ;;; The color theme functions
 
@@ -9426,10 +9426,10 @@ This builds on `color-theme-jsc-light'."
 
 (defun color-theme-kingsajz ()
   "Color theme by Olgierd \"Kingsajz\" Ziolko, created 2001-12-04.
-Another theme with wheat on DarkSlatGrey. Based on Subtle Hacker. 
-Used on Emacs 21.1 @ WinMe. Not tested on any other systems. 
+Another theme with wheat on DarkSlatGrey. Based on Subtle Hacker.
+Used on Emacs 21.1 @ WinMe. Not tested on any other systems.
 
-Some faces uses Andale mono font (nice fixed-width font). 
+Some faces uses Andale mono font (nice fixed-width font).
 It is available at:  http://www.microsoft.com/typography/downloads/andale32.exe
 
 Hail Eris! All hail Discordia!"
@@ -12949,7 +12949,7 @@ Bonus: do not use 3D modeline."
      (zmacs-region ((t (:background "gray65")))))))
 
 (defun color-theme-emacs-nw ()
-  "Follow emacs21's color-theme, with -nw getting 100% compatibility. 
+  "Follow emacs21's color-theme, with -nw getting 100% compatibility.
 
 Alex's `color-theme-emacs-21' follows emacs21's theme, but in the
 current scheme of things, that means that when it works on X, it won't
@@ -12959,7 +12959,7 @@ there are multiple windows.
 
 OTOH, `color-theme-emacs-nw' follows emacs21's theme but the goal is
 100% -nw compatibility, and in X; we shall try for decent color
-scheme, and as much compability default emacs21's X as possble. 
+scheme, and as much compability default emacs21's X as possble.
 Bugs to deego@gnufans.org.
 
 TODO: Try to make this theme relative to color-theme-emacs-21 rather
