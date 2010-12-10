@@ -72,8 +72,11 @@
 
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-config) (load user-specific-config))
+; if there is an init.el, load it.  Otherwise load everything.
 (if (file-exists-p user-specific-dir)
-  (mapc #'load (directory-files user-specific-dir nil ".*[.]el$")))
+    (if (file-exists-p (concat user-specific-dir "/init.el"))
+        (load (concat user-specific-dir "/init.el"))
+        (mapc #'load (directory-files user-specific-dir nil ".*[.]el$"))))
 
 (toggle-debug-on-error)
 ;;; init.el ends here
