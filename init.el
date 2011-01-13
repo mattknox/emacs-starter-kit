@@ -64,7 +64,8 @@
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
 
-(regen-autoloads)
+(if (fboundp 'regen-autoloads)
+    (regen-autoloads))
 (load custom-file 'noerror)
 
 ;; You can keep system- or user-specific customizations here
