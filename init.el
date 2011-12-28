@@ -12,6 +12,8 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
 ;; You really don't need these; trust me.
 
+;; need to try to make this work well with linux/OSX, emacs 22-24
+
 (toggle-debug-on-error t)
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
